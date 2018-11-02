@@ -23,15 +23,28 @@ def createTable(con=None):
 # function to add users in the table users
 
 
-def addUser(id, username, password):
+# def addUser(id, username, password):
+#     try:
+#         curs.execute("insert into users(id, username, password) values({}, {} ,{})".format(
+#             id, username, password))
+#         con.commit()
+#         con.rollback()
+#     except Exception as err:
+#         raise err
+
+
+def displayUser():
     try:
-        curs.execute("insert into users(id, username, password) values(?, ?, ?)", (
-            id, username, password))
+        curs.execute("select id , username from users")
+        results = curs.fetchall()
+
+        for result in results:
+            print(list(result))
         con.commit()
-        con.rollback()
+        con.close()
     except Exception as err:
         raise err
 
 
 if __name__ == '__main__':
-    addUser(3, 'John', 678909)
+    displayUser()
