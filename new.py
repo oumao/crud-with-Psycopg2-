@@ -32,7 +32,7 @@ def createTable(con=None):
 #     except Exception as err:
 #         raise err
 
-
+#  display user information on the terminal
 def displayUser():
     try:
         curs.execute("select id , username from users")
@@ -45,6 +45,20 @@ def displayUser():
     except Exception as err:
         raise err
 
+# update user data
+
+
+def updateUser():
+    try:
+        if con == None:
+            return False
+        curs.execute("update users set username = 'Evans' where id = 1")
+        con.commit()
+        con.close()
+    except Exception as err:
+        raise err
+
 
 if __name__ == '__main__':
-    displayUser()
+    # displayUser()
+    updateUser()
