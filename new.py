@@ -59,6 +59,18 @@ def updateUser():
         raise err
 
 
+def deleteUser():
+    try:
+        if con == None:
+            return False
+        curs.execute("Delete from users where id = 2")
+        con.commit()
+        con.close()
+    except Exception as err:
+        raise err
+
+
 if __name__ == '__main__':
     # displayUser()
-    updateUser()
+    # updateUser()
+    deleteUser()
