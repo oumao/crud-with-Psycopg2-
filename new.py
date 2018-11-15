@@ -23,14 +23,14 @@ def createTable(con=None):
 # function to add users in the table users
 
 
-# def addUser(id, username, password):
-#     try:
-#         curs.execute("insert into users(id, username, password) values({}, {} ,{})".format(
-#             id, username, password))
-#         con.commit()
-#         con.rollback()
-#     except Exception as err:
-#         raise err
+def addUser(id, username, password):
+    try:
+        curs.execute("insert into users(id, username, password) values({}, {} ,{})".format(
+            id, username, password))
+        con.commit()
+        con.rollback()
+    except Exception as err:
+        raise err
 
 #  display user information on the terminal
 def displayUser():
@@ -73,4 +73,4 @@ def deleteUser():
 if __name__ == '__main__':
     # displayUser()
     # updateUser()
-    deleteUser()
+    #deleteUser()
