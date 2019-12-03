@@ -3,7 +3,7 @@ import psycopg2
 
 # creating connection to the postgres database using psycopg2 library
 con = psycopg2.connect(host='localhost', user='postgres',
-                       password='oumaruc2016', port=5400, dbname='futgen')
+                       password='yourpassword', port=5400, dbname='dbname')
 curs = con.cursor()
 
 # create table users
